@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- นายณัฐสิทธิ์ โฆษิตเจริญกุล -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        .jumbotron {
+            position: relative;
+            overflow: hidden;
+        }
+        video {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .container {
+        z-index: 2; 
+        position: relative;
+    }
+
+
+    </style>
+    <title>23.js--bootstrap--form.html</title>
+</head>
+<body style="background-image: url(https://www.ladyissue.com/wp-content/uploads/2017/08/50-1.jpg);">
+    
+    <div class="jumbotron jumbotron-fluid mb-0 text-dark">
+        <video src="https://vod-progressive.akamaized.net/exp=1653569713~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F2149%2F18%2F460746266%2F2038250950.mp4~hmac=6ebdf9ee5b522ea0358b8e3257ccae7b03e45d7f2b422c62b96cd95b81a88bd0/vimeo-prod-skyfire-std-us/01/2149/18/460746266/2038250950.mp4?filename=pexels-karolina-grabowska-5422508.mp4" autoplay loop muted></video>
+        <div class="container">
+          <h1 class="display-4">Nathasit Kositjaroenkul</h1>
+          <p class="lead">Information Technology and Telecommunication</p>
+        </div>
+      </div>
+
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F0FFFF;">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+      <div class="container p-5">
+      <div class="row">
+          <div class="col-sm-6">
+            <div class="card mb-2" style="width: 24rem; heigth: 28rem;">
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="alert alert-primary" role="alert">
+                    บันทึกข้อมูลนักเรียน
+                  </div>
+                <div class="card-body">
+                  <!-- <h5 class="card-title">Card title</h5> -->
+                  <p class="card-text">
+
+                    <form>
+                        <div class="form-group">
+                          <label for="formGroupA">รหัส</label>
+                          <input type="text" class="form-control" id="formGroupA" placeholder="">
+                        </div>
+                        <div class="form-group">
+                          <label for="formGroupB">ชื่อ-นามสกุล</label>
+                          <input type="text" class="form-control" id="formGroupB" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupC">เบอร์โทรศัพท์</label>
+                            <input type="text" class="form-control" id="formGroupC" placeholder="">
+                          </div>
+                      </form>
+
+                      <script>
+                            
+                        function NTS(){
+                          
+                          document.getElementById('bgA').innerHTML='รหัส : '+(document.getElementById('formGroupA').value)
+                          document.getElementById('bgB').innerHTML='ชื่อ-สกุล : '+(document.getElementById('formGroupB').value)
+                          document.getElementById('bgC').innerHTML='เบอร์โทร : '+(document.getElementById('formGroupC').value)
+                        }
+                        
+                      </script>
+
+                      <button type="button" class="btn btn-primary w-25" onclick="NTS()">บันทึก</button>
+                  </p>
+                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="card " style="width: 22.5rem;height: 32rem;" >
+                    <!-- <img src="..." class="card-img-top" alt="..."> -->
+                    <div class="alert alert-dark h3" role="alert">
+                        แสดงข้อมูลนักเรียน
+                      </div>
+                    <div class="card-body">
+                      <!-- <h5 class="card-title">Card title</h5> -->
+                      <p class="card-text">
+
+                        <div class="alert alert-primary" role="alert" >
+                          <p id="bgA"></p>
+                        </div>
+                        <div class="alert alert-danger" role="alert" >
+                          <p id="bgB"></p>
+                        </div>
+                        <div class="alert alert-warning" role="alert" >
+                          <p id="bgC"></p>
+                        </div>
+
+                      </p>
+                      <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                    </div>
+                  </div>
+    
+                </div>
+          </div>
+      </div>
+      
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+</body>
+</html>
