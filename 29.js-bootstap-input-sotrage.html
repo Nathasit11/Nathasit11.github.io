@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- นายณัฐสิทธิ์ โฆษิตเจริญกุล -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <style>
+        .jumbotron {
+            position: relative;
+            overflow: hidden;
+        }
+        video {
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .container {
+        z-index: 2; 
+        position: relative;
+    }
+
+
+    </style>
+    <script>
+        let SID = []
+        let sname = []
+        let Phone = []
+        let l_SID = []
+        let l_sname = []
+        let l_Phone = []
+    </script>
+    <title>29.js-bootstap-input-sotrage.html</title>
+</head>
+<body style="background-image: url(data:image/jpeg;base64,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);">
+    
+    <div class="jumbotron jumbotron-fluid mb-0 text-dark">
+        <video src="https://vod-progressive.akamaized.net/exp=1653570431~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F1658%2F17%2F433294816%2F1886023849.mp4~hmac=69d822505388cec76e2e06f5f08da0120dac25eedaafb0d1f8704b70534f644b/vimeo-prod-skyfire-std-us/01/1658/17/433294816/1886023849.mp4?filename=production+ID%3A4747162.mp4" autoplay loop muted></video>
+        <div class="container">
+          <h1 class="display-4">Nathasit Kositjaroenkul</h1>
+          <p class="lead">Information Technology and Telecommunication</p>
+        </div>
+      </div>
+
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F0FFFF;">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+
+      <div class="container p-5">
+      <div class="row">
+          <div class="col-sm-6">
+            <div class="card mb-2" style="width: 24rem; heigth: 28rem;">
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="alert alert-primary" role="alert">
+                    บันทึกข้อมูลนักเรียน
+                  </div>
+                <div class="card-body">
+                  <!-- <h5 class="card-title">Card title</h5> -->
+                  <p class="card-text">
+                    <!-- <form action="25.js-bootrap-output.html"method="get"> -->
+                        <div class="form-group">
+                          <label for="formGroupA">รหัส</label>
+                          <input type="text" class="form-control" id="SID" placeholder="" name="SID">
+                        </div>
+                        <div class="form-group">
+                          <label for="formGroupB">ชื่อ-นามสกุล</label>
+                          <input type="text" class="form-control" id="sname" placeholder="" name="sname">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupC">เบอร์โทรศัพท์</label>
+                            <input type="text" class="form-control" id="Phone" placeholder="" name="Phone"> 
+                        </div>
+                      <!-- <input class="btn btn-warning" type="submit" value="Submit">
+                      <input class="btn btn-danger" type="reset" value="Reset">
+                      </form> -->
+
+                      <button type="button" class="btn btn-info w-25"onclick="set_array_data()">บันทึก</button>
+                      <button type="button" class="btn btn-primary w-25"onclick="clear_input()">รีเช็ต</button>
+                      <button type="button" class="btn btn-danger w-auto"onclick="clear_Storage()">Clear Storage</button>
+                  </p>
+                  <p id="output"></p>
+                  <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+              </div>
+            </div>
+
+          </div>
+      </div>
+      
+      <script>
+
+        function clear_Storage() {
+            localStorage.clear()
+        }
+
+        function clear_input() {
+            document.getElementById('SID').value = ''
+            document.getElementById('sname').value = ''
+            document.getElementById('Phone').value = ''
+        }
+
+        function get_data() {
+            document.getElementById('output').innerHTML = localStorage.getItem('SID') +
+            '<br>' + localStorage.getItem('sname') + '<br>' + localStorage.getItem('Phone')
+        }
+          function set_data(){
+              localStorage.setItem('SID',document.getElementById('SID').value)
+              localStorage.setItem('sname',document.getElementById('sname').value)
+              localStorage.setItem('Phone',document.getElementById('Phone').value)
+              get_data()
+              clear_input()
+          }
+
+          function set_array_data() {
+              SID.push(document.getElementById('SID').value)
+              sname.push(document.getElementById('sname').value)
+              Phone.push(document.getElementById('Phone').value)
+              console.log(SID)
+              console.log(sname)
+              console.log(Phone)
+              localStorage.setItem('SID',JSON.stringify(SID))
+              localStorage.setItem('sname',JSON.stringify(sname))
+              localStorage.setItem('Phone',JSON.stringify(Phone))
+              clear_input()
+              get_array_data()
+          }
+          let show_data = ''
+          function get_array_data() {
+              l_SID = JSON.parse(localStorage.getItem('SID'))
+              l_sname = JSON.parse(localStorage.getItem('sname'))
+              l_Phone = JSON.parse(localStorage.getItem('Phone'))
+              //console.log(l_SID)
+              for (let i = 0; i < l_SID.length; i++) {
+                  show_data += l_SID[i] + ' ' + l_sname[i] + ' ' + l_Phone[i] + '<br>'
+                  document.getElementById('output').innerHTML = show_data
+              }
+              show_data = '' 
+          }
+      </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+</body>
+</html>
